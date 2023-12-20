@@ -13,10 +13,17 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/andretosetto@hotmail.com/pipeline-azure-databricks/notebooks/inbound_to_bronze"
+				},
+				"linkedServiceName": {
+					"referenceName": "databricks_dafafactory_link",
+					"type": "LinkedServiceReference"
+				}
 			},
 			{
-				"name": "ingesta-camada-silver",
+				"name": "ingestao-camada-silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
@@ -33,7 +40,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/andretosetto@hotmail.com/pipeline-azure-databricks/notebooks/bronze_to_silver"
+				},
+				"linkedServiceName": {
+					"referenceName": "databricks_dafafactory_link",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
